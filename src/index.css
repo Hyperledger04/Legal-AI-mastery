@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic AI Course Landing Page Design System */
+
+@layer base {
+  :root {
+    /* Dark futuristic background */
+    --background: 220 26% 6%;
+    --foreground: 220 20% 95%;
+
+    /* Futuristic cards with subtle glow */
+    --card: 220 20% 8%;
+    --card-foreground: 220 20% 95%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 220 20% 95%;
+
+    /* Electric blue primary */
+    --primary: 240 100% 65%;
+    --primary-foreground: 220 26% 6%;
+
+    /* Purple secondary */
+    --secondary: 280 60% 50%;
+    --secondary-foreground: 220 20% 95%;
+
+    /* Muted dark tones */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 15% 65%;
+
+    /* Cyan accent */
+    --accent: 180 100% 60%;
+    --accent-foreground: 220 26% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 240 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom futuristic gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(240 100% 65%), hsl(280 60% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 60% 50%), hsl(320 70% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(180 100% 60%), hsl(200 100% 50%));
+    --gradient-background: linear-gradient(135deg, hsl(220 26% 6%), hsl(240 20% 10%));
+    --gradient-card: linear-gradient(135deg, hsl(220 20% 8%), hsl(240 15% 12%));
+    
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(240 100% 65% / 0.3);
+    --glow-secondary: 0 0 20px hsl(280 60% 50% / 0.3);
+    --glow-accent: 0 0 20px hsl(180 100% 60% / 0.3);
+    
+    /* Interactive animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    --background: 220 20% 95%;
+    --foreground: 220 26% 6%;
+    --card: 220 15% 98%;
+    --card-foreground: 220 26% 6%;
+    --popover: 220 15% 98%;
+    --popover-foreground: 220 26% 6%;
+    --primary: 240 100% 55%;
+    --primary-foreground: 220 20% 95%;
+    --secondary: 280 60% 40%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 15% 45%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 220 26% 6%;
+    --border: 220 15% 85%;
+    --input: 220 15% 90%;
+    --ring: 240 100% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    background: var(--gradient-background);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Interactive button variants */
+  .btn-hero {
+    @apply relative px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--glow-primary);
+  }
+  
+  .btn-hero:hover {
+    @apply scale-105 -translate-y-1;
+    box-shadow: var(--glow-primary), 0 10px 40px hsl(240 100% 65% / 0.4);
+  }
+
+  .btn-secondary {
+    @apply relative px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform border-2;
+    border-color: hsl(var(--secondary));
+    background: transparent;
+    color: hsl(var(--secondary));
+  }
+  
+  .btn-secondary:hover {
+    @apply scale-105 -translate-y-1;
+    background: var(--gradient-secondary);
+    color: hsl(var(--foreground));
+    box-shadow: var(--glow-secondary);
+  }
+
+  /* Interactive cards */
+  .card-interactive {
+    @apply relative p-6 rounded-2xl transition-all duration-500 transform cursor-pointer;
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .card-interactive:hover {
+    @apply scale-105 -translate-y-2;
+    box-shadow: 0 20px 60px hsl(240 100% 65% / 0.2);
+    border-color: hsl(var(--primary));
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-20;
+  }
+
+  /* Interactive hover glow */
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow:hover {
+    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.5));
+  }
+
+  /* Timeline connector */
+  .timeline-connector {
+    @apply absolute left-6 top-0 w-0.5 h-full bg-gradient-to-b from-primary via-secondary to-accent;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
