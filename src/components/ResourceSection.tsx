@@ -1,38 +1,41 @@
-import lexaPromptsLogo from "@/assets/lexaprompts-logo-new.png";
-import n8nLogo from "@/assets/n8n-logo-new.png";
-import chatgptLogo from "@/assets/chatgpt-logo-new.png";
+import { Rocket, Scale, Briefcase, BookOpen, Settings, Sparkles, Zap, Target } from "lucide-react";
 
 const ResourceSection = () => {
   const resources = [
     {
-      icon: lexaPromptsLogo,
+      icon: <Rocket className="w-8 h-8" />,
       title: "Exclusive Beta Access",
       description: "Be the first to use and shape \"Lexaprompts,\" our flagship platform. Includes a chance for discounted subscriptions.",
-      highlight: "Beta Access"
+      highlight: "Beta Access",
+      color: "from-blue-500 to-purple-600"
     },
     {
-      icon: lexaPromptsLogo,
+      icon: <Scale className="w-8 h-8" />,
       title: "200+ Indian Legal Prompts",
       description: "Ready-to-use, plug-and-play prompts specifically designed for the Indian legal context.",
-      highlight: "Indian Focused"
+      highlight: "Indian Focused",
+      color: "from-green-500 to-emerald-600"
     },
     {
-      icon: chatgptLogo,
+      icon: <Briefcase className="w-8 h-8" />,
       title: "2,000+ Business & Marketing Prompts",
       description: "Grow your practice with expert prompts for marketing, branding, and business development.",
-      highlight: "Business Growth"
+      highlight: "Business Growth",
+      color: "from-orange-500 to-red-600"
     },
     {
-      icon: "📚",
+      icon: <BookOpen className="w-8 h-8" />,
       title: "10,000+ Legal Drafts",
       description: "A massive knowledge base of contracts and legal documents to train your custom AI agents on.",
-      highlight: "Massive Library"
+      highlight: "Massive Library",
+      color: "from-indigo-500 to-blue-600"
     },
     {
-      icon: n8nLogo,
+      icon: <Settings className="w-8 h-8" />,
       title: "6,000+ N8N Workflows",
       description: "A huge library of pre-built automation workflows for chatbots, AI agents, personal assistants, and more.",
-      highlight: "Ready to Use"
+      highlight: "Ready to Use",
+      color: "from-purple-500 to-pink-600"
     }
   ];
 
@@ -59,17 +62,12 @@ const ResourceSection = () => {
               <div className="relative z-10">
                 {/* Icon */}
                 <div className="mb-6 flex justify-center">
-                  {typeof resource.icon === 'string' ? (
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                  <div className={`relative p-4 rounded-2xl bg-gradient-to-br ${resource.color} group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl`}>
+                    <div className="text-white">
                       {resource.icon}
                     </div>
-                  ) : (
-                    <img 
-                      src={resource.icon} 
-                      alt={`${resource.title} logo`}
-                      className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 hover-glow filter brightness-110 contrast-110"
-                    />
-                  )}
+                    <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                 </div>
 
                 {/* Highlight badge */}
@@ -87,9 +85,16 @@ const ResourceSection = () => {
 
                 {/* Interactive elements */}
                 <div className="mt-6 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Sparkles className="w-4 h-4" />
                   <span className="text-sm font-medium">Included in course</span>
                   <div className="w-1 h-1 rounded-full bg-primary"></div>
+                  <Zap className="w-4 h-4" />
                   <span className="text-sm">Lifetime access</span>
+                </div>
+                
+                {/* Progress indicator */}
+                <div className="mt-4 w-full bg-gray-200 rounded-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className={`h-1 rounded-full bg-gradient-to-r ${resource.color} transition-all duration-1000 group-hover:w-full w-0`}></div>
                 </div>
               </div>
             </div>
