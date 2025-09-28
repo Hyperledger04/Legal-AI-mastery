@@ -14,35 +14,30 @@ const FinalCTASection = () => {
         </h2>
 
         <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-          Seats are limited, especially the early bird spots. Secure your place today and gain an undeniable advantage in your legal career.
+          Seats are limited. Secure your place today and gain an undeniable advantage in your legal career.
         </p>
 
-        {/* Urgency indicators */}
+        {/* Course Information */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
-          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-card border border-accent/20">
-            <div className="w-3 h-3 rounded-full bg-accent animate-pulse"></div>
-            <span className="text-accent font-medium">Early Bird Slots: 15 Remaining</span>
-          </div>
           <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-card border border-primary/20">
             <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
             <span className="text-primary font-medium">Course Starts: Mid-October 2025</span>
           </div>
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-card border border-secondary/20">
+            <div className="w-3 h-3 rounded-full bg-secondary animate-pulse"></div>
+            <span className="text-secondary font-medium">Limited Seats Available</span>
+          </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-          <div 
-            className="btn-hero text-xl px-12 py-6 animate-pulse-glow cursor-pointer"
-            onClick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            🎯 Claim Your 25% Early Bird Discount
-          </div>
-          
-          <div 
-            className="btn-secondary text-lg px-8 py-4 cursor-pointer"
-            onClick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            💳 Start with a Partial Payment
+        {/* Course Details */}
+        <div className="mb-12 p-8 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 border border-primary/10">
+          <h3 className="text-2xl font-bold mb-4 text-center text-foreground">Ready to Transform Your Legal Practice?</h3>
+          <p className="text-center text-muted-foreground mb-6">
+            Join the elite community of AI-powered legal professionals and gain an undeniable advantage in your career.
+          </p>
+          <div className="text-center">
+            <span className="text-3xl font-bold gradient-text">₹1999</span>
+            <span className="text-muted-foreground ml-2">one-time payment</span>
           </div>
         </div>
 
