@@ -35,9 +35,17 @@ const FinalCTASection = () => {
           <p className="text-center text-muted-foreground mb-6">
             Join the elite community of AI-powered legal professionals and gain an undeniable advantage in your career.
           </p>
-          <div className="text-center">
+          <div className="text-center mb-6">
             <span className="text-3xl font-bold gradient-text">₹1999</span>
             <span className="text-muted-foreground ml-2">one-time payment</span>
+          </div>
+          <div className="text-center">
+            <div 
+              className="btn-hero text-xl px-12 py-6 animate-pulse-glow cursor-pointer inline-block"
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              View Payment Options
+            </div>
           </div>
         </div>
 

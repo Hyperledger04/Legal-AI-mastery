@@ -1,4 +1,6 @@
 
+import PaymentOptions from "./PaymentOptions";
+
 const PricingSection = () => {
   return (
     <section id="pricing" className="section-padding relative">
@@ -57,6 +59,11 @@ const PricingSection = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Payment Options */}
+        <div className="mt-16">
+          <PaymentOptions />
         </div>
 
         {/* Trust indicators */}
