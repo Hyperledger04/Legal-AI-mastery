@@ -1,3 +1,5 @@
+import PaymentOptions from "./PaymentOptions";
+
 const PricingSection = () => {
   return (
     <section id="pricing" className="section-padding relative">
@@ -13,7 +15,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
           {/* Standard Price Box */}
           <div className="card-interactive group relative overflow-hidden">
             {/* Popular badge */}
@@ -51,14 +53,9 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <a 
-                href="https://rzp.io/rzp/rUCK6mBw" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-hero w-full text-center block"
-              >
+              <div className="btn-hero w-full text-center block cursor-pointer" onClick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}>
                 Enroll Now - Full Access
-              </a>
+              </div>
             </div>
           </div>
 
@@ -84,14 +81,9 @@ const PricingSection = () => {
                   <span className="text-lg text-muted-foreground line-through ml-2">₹1999</span>
                 </div>
 
-                <a 
-                  href="https://rzp.io/rzp/rUCK6mBw" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-secondary w-full text-center block"
-                >
+                <div className="btn-secondary w-full text-center block cursor-pointer" onClick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}>
                   Claim Your 25% Early Bird Discount
-                </a>
+                </div>
               </div>
             </div>
 
@@ -117,14 +109,9 @@ const PricingSection = () => {
                   </p>
                 </div>
 
-                <a 
-                  href="https://rzp.io/rzp/8tQ2A4S" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-secondary w-full text-center block"
-                >
+                <div className="btn-secondary w-full text-center block cursor-pointer" onClick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}>
                   Start with a Partial Payment
-                </a>
+                </div>
               </div>
             </div>
 
@@ -137,6 +124,11 @@ const PricingSection = () => {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Payment Options */}
+        <div id="payment-options">
+          <PaymentOptions />
         </div>
 
         {/* Trust indicators */}

@@ -31,23 +31,19 @@ const FinalCTASection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-          <a 
-            href="https://rzp.io/rzp/rUCK6mBw" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-hero text-xl px-12 py-6 animate-pulse-glow"
+          <div 
+            className="btn-hero text-xl px-12 py-6 animate-pulse-glow cursor-pointer"
+            onClick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}
           >
             🎯 Claim Your 25% Early Bird Discount
-          </a>
+          </div>
           
-          <a 
-            href="https://rzp.io/rzp/8tQ2A4S" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-secondary text-lg px-8 py-4"
+          <div 
+            className="btn-secondary text-lg px-8 py-4 cursor-pointer"
+            onClick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}
           >
             💳 Start with a Partial Payment
-          </a>
+          </div>
         </div>
 
         {/* Final value proposition */}
