@@ -46,14 +46,11 @@ const PaymentOptions = () => {
             {/* QR Code */}
             <div className="bg-white p-6 rounded-xl border-2 border-gray-200 mb-4 flex flex-col items-center">
               <div className="w-48 h-48 bg-white rounded-lg flex items-center justify-center mb-4 border border-gray-200">
-                {/* Replace this with your actual QR code image */}
-                <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <QrCode className="w-16 h-16 text-gray-400 mx-auto mb-2" />
-                    <p className="text-xs text-gray-500">QR Code Image</p>
-                    <p className="text-xs text-gray-400 mt-1">Replace with actual QR</p>
-                  </div>
-                </div>
+                <img 
+                  src="/qr-code.png" 
+                  alt="UPI Payment QR Code" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="text-center">
                 <p className="text-sm font-medium text-gray-700 mb-1">UPI ID</p>
